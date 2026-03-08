@@ -122,16 +122,6 @@ function Dashboard() {
               </svg>
               <span>Cài đặt</span>
             </a>
-            <a href="#web3" className="nav-item" onClick={(e) => { e.preventDefault(); navigateTo('/web3-dashboard'); }}>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="4" r="2" stroke="currentColor" strokeWidth="1.5"/>
-                <circle cx="4" cy="10" r="2" stroke="currentColor" strokeWidth="1.5"/>
-                <circle cx="16" cy="10" r="2" stroke="currentColor" strokeWidth="1.5"/>
-                <line x1="10" y1="6" x2="10" y2="14" stroke="currentColor" strokeWidth="1"/>
-                <line x1="6" y1="10" x2="14" y2="10" stroke="currentColor" strokeWidth="1"/>
-              </svg>
-              <span>Web3 Dashboard</span>
-            </a>
           </div>
         </nav>
 

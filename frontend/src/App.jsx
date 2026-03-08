@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './Login';
 import Register from './Register';
 import Dashboard from './Dashboard';
-import Web3Dashboard from './Web3Dashboard';
 import ProtectedRoute from './ProtectedRoute';
 import './App.css';
 
@@ -16,7 +15,6 @@ function App() {
         
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/web3-dashboard" element={<Web3Dashboard />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/login" replace />} />

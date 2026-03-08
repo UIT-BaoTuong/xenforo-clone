@@ -1,0 +1,12 @@
+# Docker database data
+postgres/forum_data/
+postgres/auth_data/
+
+# Java/Gradle build files
+**/build/
+**/.gradle/
+**/*.jar
+
+# IDE files
+.vscode/
+.idea/

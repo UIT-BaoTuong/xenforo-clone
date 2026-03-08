@@ -1,15 +1,15 @@
 version: '3.8'
 
 services:
-  auth-db: 
+  forum-db: 
     image: postgres:17-alpine 
-    container_name: auth-db-container
+    container_name: forum-db-container
     restart: always
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Aa123456
-      POSTGRES_DB: auth_db
+      POSTGRES_DB: forum_db
     ports:
-      - "5433:5432"
+      - "5434:5432"
     volumes:
-      - ./auth_data:/var/lib/postgresql/data
+      - ./forum_data:/var/lib/postgresql/data
