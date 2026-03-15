@@ -12,6 +12,6 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 # Copy file jar đã build từ Stage 1
 COPY --from=build /app/build/libs/*.jar app.jar
-# Mở cổng 8082 (như cấu hình trong properties)
-EXPOSE 8082
+# Mở cổng 8080 (như cấu hình trong properties)
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]

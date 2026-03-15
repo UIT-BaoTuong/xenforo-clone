@@ -23,6 +23,6 @@ WORKDIR /app
 # Copy file .jar từ bước build sang (Gradle mặc định build ra thư mục build/libs)
 COPY --from=build /app/build/libs/*.jar app.jar
 
-EXPOSE 8081
+EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
