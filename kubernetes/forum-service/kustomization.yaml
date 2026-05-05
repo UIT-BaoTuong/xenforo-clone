@@ -8,4 +8,4 @@ resources:
 images:
 - name: docker.io/tuongndb1609/forum-service
   newName: docker.io/tuongndb1609/forum-service
-  newTag: HEAD
+  newTag: 43395ce
