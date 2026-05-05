@@ -22,10 +22,20 @@ spec:
       script: |
         cd kubernetes/$(params.folders)
         kustomize edit set image docker.io/tuongndb1609/$(params.folders)=docker.io/tuongndb1609/$(params.folders):$(params.revision)
-
     - name: git-push
       image: alpine/git:latest
       workingDir: $(workspaces.source.path)
+      env:
+        - name: GIT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: git-credentials
+              key: username
+        - name: GIT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: git-credentials
+              key: password
       script: |
         export GIT_TERMINAL_PROMPT=0
         git config --global user.email "23521750@gm.uit.edu.vn"
@@ -36,8 +46,5 @@ spec:
           echo "No changes"
         else
           git commit -m "[CI] Update image"
-          repo_url="$(params.url)"
-          repo_url="${repo_url%.git}"
-          repo_path="${repo_url#https://github.com/}"
-          git push "${repo_path}.git" HEAD:$(params.branch) --force
+          git push https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/UIT-BaoTuong/stockvn-web.git HEAD:$(params.branch) --force
         fi
